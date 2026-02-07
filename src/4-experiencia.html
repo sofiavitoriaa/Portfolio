@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Experiência Profissional TI - Sofia Vitória</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc;
+            overflow: auto;
+            color: #334155;
+        }
+        .slide-container {
+            max-width: 1280px;
+            width: calc(100% - 40px);
+            aspect-ratio: 1280 / 720;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 20px auto;
+            box-sizing: border-box;
+            background-color: #f8fafc;
+        }
+
+        /* Sidebar Stripe - Consistent with other slides */
+        .sidebar-stripe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 12px;
+            background-color: #3b82f6;
+            z-index: 20;
+        }
+
+        /* Header Section */
+        .header-section {
+            padding: 3rem 5rem 1rem 6rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            z-index: 10;
+        }
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        .title-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+        .title-divider {
+            width: 100px;
+            height: 6px;
+            background-color: #3b82f6;
+            margin-top: 0.75rem;
+            border-radius: 3px;
+        }
+
+        /* Content Section */
+        .content-section {
+            flex: 1;
+            padding: 1rem 6rem 3rem 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        /* Experience Card */
+        .exp-card {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+
+        .exp-header {
+            background-color: #1e293b; /* Slate 800 */
+            padding: 2rem 3rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle pattern on header */
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            opacity: 0.1;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #ffffff 10px, #ffffff 12px);
+        }
+
+        .exp-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 2;
+        }
+
+        .role-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .company-name {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+
+        .date-badge {
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .exp-body {
+            padding: 2.5rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 4rem;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        .activity-icon-box {
+            min-width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 1.25rem;
+        }
+
+        .activity-text {
+            font-size: 1.2rem;
+            color: #475569;
+            line-height: 1.5;
+            padding-top: 0.25rem;
+        }
+
+        /* Background Decorations */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .circle-1 {
+            width: 600px;
+            height: 600px;
+            border: 2px solid #e2e8f0;
+            top: -200px;
+            right: -200px;
+            opacity: 0.6;
+        }
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background-color: #dbeafe; /* Blue 100 */
+            bottom: -100px;
+            left: -100px;
+            opacity: 0.3;
+        }
+    
+        /* Action panel + button (visual upgrade) */
+        .action-panel {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1.25rem;
+            z-index: 20;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(90deg,#3b82f6,#60a5fa);
+            color: #fff;
+            padding: 0.7rem 1.25rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 24px rgba(59,130,246,0.18);
+            transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(59,130,246,0.22); }
+        .btn-primary i { font-size: 0.95rem; opacity: 0.95; }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Background Decorations -->
+<div class="sidebar-stripe"></div>
+<div class="bg-circle circle-1"></div>
+<div class="bg-circle circle-2"></div>
+<!-- Header -->
+<div class="header-section">
+<div class="icon-container">
+<i class="fas fa-laptop-code"></i>
+</div>
+<div class="title-group">
+<h1 class="page-title">EXPERIÊNCIA PROFISSIONAL (TI)</h1>
+<div class="title-divider"></div>
+</div>
+</div>
+<!-- Content -->
+<div class="content-section">
+<div class="exp-card">
+<!-- Card Header -->
+<div class="exp-header">
+<div class="header-pattern"></div>
+<div class="exp-info">
+<h2 class="role-title">Assistente de TI</h2>
+<div class="company-name">
+<i class="fas fa-building"></i>
+<span>Novo Atacarejo – Barreiros/PE</span>
+</div>
+</div>
+<div class="date-badge">
+<i class="far fa-calendar-alt"></i>
+<span>Set 2025 – Atual</span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="exp-body">
+<!-- Item 1 -->
+<div class="activity-item">
+<div class="activity-icon-box">
+<i class="fas fa-headset"></i>
+</div>
+<p class="activity-text">Atendimento a usuários e chamados de TI, garantindo suporte ágil e eficiente.</p>
+</div>
+<!-- Item 2 -->
+<div class="activity-item">
+<div class="activity-icon-box">
+<i class="fas fa-tools"></i>
+</div>
+<p class="activity-text">Instalação, configuração e manutenção preventiva de softwares e sistemas operacionais.</p>
+</div>
+<!-- Item 3 -->
+<div class="activity-item">
+<div class="activity-icon-box">
+<i class="fas fa-network-wired"></i>
+</div>
+<p class="activity-text">Configuração de redes locais, cabeamento estruturado e conexão de dispositivos.</p>
+</div>
+<!-- Item 4 -->
+<div class="activity-item">
+<div class="activity-icon-box">
+<i class="fas fa-server"></i>
+</div>
+<p class="activity-text">Monitoramento básico de servidores e infraestrutura para assegurar disponibilidade.</p>
+</div>
+<!-- Item 5 -->
+<div class="activity-item">
+<div class="activity-icon-box">
+<i class="fas fa-shield-alt"></i>
+</div>
+<p class="activity-text">Aplicação de medidas de segurança da informação e backup de dados críticos.</p>
+</div>
+<!-- Item 6 -->
+<div class="activity-item">
+<div class="activity-icon-box">
+<i class="fas fa-users-cog"></i>
+</div>
+<p class="activity-text">Gestão de contas de usuários, controle de acessos e permissões no sistema.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        <div class="action-panel">
+            <a href="3-competencias.html" class="btn-primary" aria-label="Voltar para a página anterior"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <a href="5-experiencia2.html" class="btn-primary" aria-label="Ir para Principais Competências">Próxima página <i class="fas fa-arrow-right"></i></a>
+        </div>
+        </div>
+</body>
+</html>
